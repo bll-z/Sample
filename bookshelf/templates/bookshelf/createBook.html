@@ -1,0 +1,10 @@
+{% include 'main_top.html' %}
+<h2>Add a Book:</h2>
+<div class='form-container'>
+	<form action="/bookshelf/createBook/" method="post">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<input type="submit" value="Submit">
+	</form>
+</div>
+{% include 'main_bottom.html' %}

@@ -1,0 +1,8 @@
+{% include 'main_top.html' %}
+<h2>{{book}} : </h2>
+<div class='book-description'>
+	<p>This gem, a classic work of {{book.genre}}, was</p>
+	<p>written by {% for author in book.writers.all %}{% if forloop.first and forloop.last %}{{author}} {% else %}{% if not forloop.last%}{{author}}, {% else %}and {{author}} {% endif %}{% endif %}{% endfor %}</p>
+	<p>and published on {{book.pub_date|date:'M d, Y'}}.</p>
+</div>
+{% include 'main_bottom.html' %}
